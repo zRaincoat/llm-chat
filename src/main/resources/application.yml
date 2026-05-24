@@ -1,0 +1,16 @@
+#file: noinspection YAMLSchemaValidation
+spring:
+  application:
+    name: spring-ai
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: qwen3:30b # works fine for Laptop RTX 5060 (8GB VRAM) + 32GB RAM
+          temperature: 0.7
+      init:
+        pull-model-strategy: when_missing
